@@ -21,46 +21,24 @@ class SettingsPage extends StatelessWidget {
         title: const Text('Settings page'),
       ),
       body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(30),
-          child: Row(
-            children: [
-              TextButton(
-                onPressed: () async {
-                  String res = await deslogearUsuario();
-                  if(res == 'exito'){
-                    Navigator.popAndPushNamed(context, '/login');
-                  }
-                }, 
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.deepOrange,
-                ),
-                child: const Text(
-                  'Cerrar Sesion',
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
-                  ),
+        child: TextButton(
+              onPressed: () async {
+                String res = await deslogearUsuario();
+                if(res == 'exito'){
+                  Navigator.popAndPushNamed(context, '/login');
+                }
+              }, 
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.deepOrange,
+              ),
+              child: const Text(
+                'Cerrar Sesion',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.white,
                 ),
               ),
-              TextButton(
-                onPressed: () async {
-                  
-                }, 
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.deepOrange,
-                ),
-                child: const Text(
-                  'Cerrar Sesion',
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
+            ),
       ),
     );
   }
